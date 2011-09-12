@@ -49,7 +49,11 @@ module RVideo # :nodoc:
     end
     
     def initialize_with_raw_response(raw_response)
-      @raw_response = raw_response
+      if RUBY_VERSION >= '1.9.1'
+        @raw_response = raw_response.force_encoding('ASCII-8Bit')
+      else
+        @raw_response = raw_response
+ 	    end
     end
     
     def initialize_with_file(file, ffmpeg_binary = nil)
@@ -73,8 +77,10 @@ module RVideo # :nodoc:
       @full_filename = file
       @filename      = File.basename(@full_filename)
       @path          = File.dirname(@full_filename)
-      
       @raw_response = `#{@ffmpeg_binary} -i #{@full_filename.shell_quoted} 2>&1`
+      if RUBY_VERSION >= '1.9.1'
+        @raw_response = @raw_response.force_encoding('ASCII-8Bit')
+      else
     end
     
     # Returns true if the file can be read successfully. Returns false otherwise.
