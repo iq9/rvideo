@@ -1,3 +1,7 @@
+v0.9.7 2011-09-13
+
+* Ruby 1.9.2 Compatibility - Inspector and FrameCapturer threw "ArgumentError: Invalid UTF-8 sequence" on some videos (mostly AVIs).
+
 v0.9.6 IN PROGRESS, TODO: need more documentation of changes here, coming later..
 
 Major Enhancements:
