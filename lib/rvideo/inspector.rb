@@ -80,7 +80,7 @@ module RVideo # :nodoc:
       @raw_response = `#{@ffmpeg_binary} -i #{@full_filename.shell_quoted} 2>&1`
       if RUBY_VERSION >= '1.9.1'
         @raw_response = @raw_response.force_encoding('ASCII-8Bit')
-      else
+      end
     end
     
     # Returns true if the file can be read successfully. Returns false otherwise.
