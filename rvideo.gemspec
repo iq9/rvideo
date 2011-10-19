@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'iq9-rvideo'
-  s.version = '0.9.8'
+  s.version = '0.9.9'
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Boling, Jonathan Dahl (Slantwise Design), Seth Thomas Rasmussen"]
