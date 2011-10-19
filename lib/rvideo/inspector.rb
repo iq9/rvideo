@@ -480,7 +480,7 @@ module RVideo # :nodoc:
     VAL = '([^,]+)'
     
     RATE = '([\d.]+k?)'
-    PAR_DAR = '(?:\s*\[?(?:PAR\s*(\d+:\d+))?\s*(?:DAR\s*(\d+:\d+))?\]?)?'
+    SAR_DAR = '(?:\s*\[?(?:(?:PAR|SAR)\s*(\d+:\d+))?\s*(?:DAR\s*(\d+:\d+))?\]?)?'
     
     AUDIO_MATCH_PATTERN = /
       Stream\s+(.*?)[,:\(\[].*?\s*
@@ -507,10 +507,10 @@ module RVideo # :nodoc:
       #{VAL}#{SEP}                                                # codec
       (?:#{VAL}#{SEP})?                                           # color space
       (\d+)x(\d+)                                                 # resolution
-      #{PAR_DAR}                                                  # pixel and display aspect ratios
+      #{SAR_DAR}                                                  # screen and display aspect ratios
       #{SEP}?
       (?:#{RATE}\s*(kb\/s)#{SEP}?)?                               # video bit rate
-      #{PAR_DAR}#{SEP}?                                           # pixel and display aspect ratios
+      #{SAR_DAR}#{SEP}?                                           # screen and display aspect ratios
       (?:#{RATE}\s*#{FPS}#{SEP}?)?                                # frame rate
       (?:#{RATE}\s*tbr#{SEP}?)?                                   # time base
       (?:#{RATE}\s*tbn#{SEP}?)?                                   # time base
