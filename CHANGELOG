@@ -1,4 +1,9 @@
-v0.9.7 2011-09-13
+v0.9.9 2011-10-19
+
+* 10x performance improvement on Frame Captures
+* Updated to handle the PAR->SAR change in FFmpeg 0.8 [https://github.com/FFmpeg/FFmpeg/commit/fdd130a2]
+
+v0.9.8 2011-09-13
 
 * Ruby 1.9.2 Compatibility - Inspector and FrameCapturer threw "ArgumentError: Invalid UTF-8 sequence" on some videos (mostly AVIs).
 
