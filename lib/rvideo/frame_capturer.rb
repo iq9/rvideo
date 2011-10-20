@@ -102,8 +102,9 @@ module RVideo
 
     def create_command(input, output, offset)
       options = {:input_file => input, :output_file => output}
-      # Apparently putting `offset` before `-i` switch makes screengrabs faster.
-      ffmpeg = RVideo::Tools::Ffmpeg.new("#{@ffmpeg_binary} -ss #{offset} -i $input_file$ -vframes 1 -vcodec mjpeg -y -f image2 $resolution$ $output_file$", options)
+      # Putting `offset` prior to `-i` arg makes screengrabs faster, but at the expense of reliability.
+      # It will generate a all-gray frame with some older MPEG 1 and 2's.
+      ffmpeg = RVideo::Tools::Ffmpeg.new("#{@ffmpeg_binary} -i $input_file$ -ss #{offset} -vframes 1 -vcodec mjpeg -y -f image2 $resolution$ $output_file$", options)
       ffmpeg.command
     end
 
