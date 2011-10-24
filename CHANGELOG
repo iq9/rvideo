@@ -1,3 +1,7 @@
+v0.9.10 2011-10-24
+
+* Remove 10x performance improvement on Frame Captures. Gray-frame bug reappeared.
+
 v0.9.9 2011-10-19
 
 * 10x performance improvement on Frame Captures
